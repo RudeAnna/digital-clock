@@ -1,0 +1,41 @@
+.number-wrapper {
+	position: relative;
+    width: 62px;
+    height: 113px;
+}
+
+.segment {
+    background: rgb(233, 233, 233);
+    position: absolute;
+}
+
+.vertical {
+    width: 10px;
+    height: 50px;
+    clip-path: polygon(100% 10%,100% 90%,50% 100%,0% 90%,0% 10%,50% 0%);
+}
+
+.horizontal {
+    height: 10px;
+    width: 50px;
+    clip-path: polygon(90% 0%,100% 50%,90% 100%,10% 100%,0% 50%,10% 0%);
+}
+
+.A, .D, .G {
+    left: 6px;
+}
+.D {
+    bottom: 0px;
+}
+.G {
+    top: 51.5px;
+}
+.F, .B {
+    top: 6px;
+}
+.E, .C {
+    bottom: 6px;
+}
+.B, .C {
+    right: 0;
+}
