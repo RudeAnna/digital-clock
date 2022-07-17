@@ -21,21 +21,25 @@
     clip-path: polygon(90% 0%,100% 50%,90% 100%,10% 100%,0% 50%,10% 0%);
 }
 
-.A, .D, .G {
+#A, #D, #G {
     left: 6px;
 }
-.D {
+#D {
     bottom: 0px;
 }
-.G {
+#G {
     top: 51.5px;
 }
-.F, .B {
+#F, #B {
     top: 6px;
 }
-.E, .C {
+#E, #C {
     bottom: 6px;
 }
-.B, .C {
+#B, #C {
     right: 0;
+}
+
+.active {
+    background-color: aqua;
 }
