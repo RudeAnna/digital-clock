@@ -1,111 +1,40 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 import { NumberProps } from "./types";
+import { getSectionBackgroundColor } from "./utils";
 
-const Number = (props: NumberProps) => {
-	const { number } = props;
+export const Number = (props: NumberProps) => {
+	const { number, id } = props;
 
     useEffect(() => {
-        const segmentA = document.getElementById('A') as HTMLDivElement;
-        const segmentB = document.getElementById('B') as HTMLDivElement;
-        const segmentC = document.getElementById('C') as HTMLDivElement;
-        const segmentD = document.getElementById('D') as HTMLDivElement;
-        const segmentE = document.getElementById('E') as HTMLDivElement;
-        const segmentF = document.getElementById('F') as HTMLDivElement;
-        const segmentG = document.getElementById('G') as HTMLDivElement;
-        
-        segmentA.classList.remove('active');
-        segmentB.classList.remove('active');
-        segmentC.classList.remove('active');
-        segmentD.classList.remove('active');
-        segmentE.classList.remove('active');
-        segmentF.classList.remove('active');
-        segmentG.classList.remove('active');
-
-    
-    switch(number) {
-        case 0:
-            segmentA.classList.add('active');
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            segmentD.classList.add('active');
-            segmentE.classList.add('active');
-            segmentF.classList.add('active');
-            break;
-        case 1:
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            break;
-        case 2:
-            segmentA.classList.add('active');
-            segmentB.classList.add('active');
-            segmentD.classList.add('active');
-            segmentE.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-        case 3:
-            segmentA.classList.add('active');
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            segmentD.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-        case 4: 
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            segmentF.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-        case 5:
-            segmentA.classList.add('active');
-            segmentC.classList.add('active');
-            segmentD.classList.add('active');
-            segmentF.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-        case 6:
-            segmentA.classList.add('active');
-            segmentC.classList.add('active');
-            segmentD.classList.add('active');
-            segmentE.classList.add('active');
-            segmentF.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-        case 7:
-            segmentA.classList.add('active');
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            break;
-        case 8:
-            segmentA.classList.add('active');
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            segmentD.classList.add('active');
-            segmentE.classList.add('active');
-            segmentF.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-        case 9:
-            segmentA.classList.add('active');
-            segmentB.classList.add('active');
-            segmentC.classList.add('active');
-            segmentD.classList.add('active');
-            segmentF.classList.add('active');
-            segmentG.classList.add('active');
-            break;
-    }
-}, [number]);
+        const segmentA = document.querySelector(`.a-${id}`) as HTMLDivElement;
+        const segmentB = document.querySelector(`.b-${id}`) as HTMLDivElement;
+        const segmentC = document.querySelector(`.c-${id}`) as HTMLDivElement;
+        const segmentD = document.querySelector(`.d-${id}`) as HTMLDivElement;
+        const segmentE = document.querySelector(`.e-${id}`) as HTMLDivElement;
+        const segmentF = document.querySelector(`.f-${id}`) as HTMLDivElement;
+        const segmentG = document.querySelector(`.g-${id}`) as HTMLDivElement;
+        getSectionBackgroundColor(
+            number,
+            segmentA,
+            segmentB,
+            segmentC,
+            segmentD,
+            segmentE,
+            segmentF,
+            segmentG);
+    }, [number]);
 
 
 	return (
 		<div className="number-wrapper">
-			<div id="A" className="segment horizontal"></div>
-			<div id="B" className="segment vertical"></div>
-			<div id="C" className="segment vertical"></div>
-			<div id="D" className="segment horizontal"></div>
-			<div id="E" className="segment vertical"></div>
-			<div id="F" className="segment vertical"></div>
-			<div id="G" className="segment horizontal"></div>
+			<div className={`horizontal a a-${id}`} />
+			<div className={`vertical b b-${id}`} />
+			<div className={`vertical c c-${id}`} />
+			<div className={`horizontal d d-${id}`} />
+			<div className={`vertical e e-${id}`} />
+			<div className={`vertical f f-${id}`} />
+			<div className={`horizontal g g-${id}`} />
 		</div>  
 	);
 };

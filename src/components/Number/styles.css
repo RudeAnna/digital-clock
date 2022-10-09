@@ -4,7 +4,7 @@
     height: 113px;
 }
 
-.segment {
+.vertical, .horizontal {
     background: rgb(233, 233, 233);
     position: absolute;
 }
@@ -21,25 +21,21 @@
     clip-path: polygon(90% 0%,100% 50%,90% 100%,10% 100%,0% 50%,10% 0%);
 }
 
-#A, #D, #G {
+.a, .d, .g {
     left: 6px;
 }
-#D {
+.d {
     bottom: 0px;
 }
-#G {
+.g {
     top: 51.5px;
 }
-#F, #B {
+.f, .b {
     top: 6px;
 }
-#E, #C {
+.e, .c {
     bottom: 6px;
 }
-#B, #C {
+.b, .c {
     right: 0;
-}
-
-.active {
-    background-color: aqua;
 }
