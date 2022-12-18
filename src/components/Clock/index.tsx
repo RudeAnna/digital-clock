@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Divider from '../Divider/indfex';
 import Number from '../Number';
 import './styles.css';
 import { createArrayOfNums } from './utils';
@@ -35,9 +36,11 @@ const Clock = () => {
           {hours.map((num: number, index: any) => {
             return <Number key={index} number={num} id={index}/>
           })}
+          <Divider />
           {minutes.map((num: number, index: any) => {
             return <Number key={index+2} number={num} id={index+2}/>
           })}
+          <Divider />
           {seconds.map((num: number, index: any) => {
             return <Number key={index+4} number={num} id={index+4}/>
           })}

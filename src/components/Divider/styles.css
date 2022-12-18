@@ -1,0 +1,11 @@
+.divider-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.divider-item {
+    width: 10px;
+    height: 10px;
+    background-color: #1EC8FF;
+}
