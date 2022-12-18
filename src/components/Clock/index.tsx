@@ -9,17 +9,25 @@ const Clock = () => {
   const [minutes, setMinutes] = useState<number[]>(createArrayOfNums(time.getMinutes()));
   const [seconds, setSeconds] = useState<number[]>(createArrayOfNums(time.getSeconds()));
 
-
   const setTime = () => {
-  let time = new Date();
+    let time = new Date();
 
-  setSeconds(createArrayOfNums(time.getSeconds()));
-  setMinutes(createArrayOfNums(time.getMinutes()));
-  setHours(createArrayOfNums(time.getHours()));
+    const newMinutes = time.getMinutes();
+    const newHours = time.getHours();
+
+    setSeconds(createArrayOfNums(time.getSeconds()));
+
+    if (createArrayOfNums(newMinutes) !== minutes){
+      setMinutes(createArrayOfNums(time.getMinutes()));
+    }
+
+    if (createArrayOfNums(newHours) !== hours){
+      setHours(createArrayOfNums(time.getHours()));
+    }
+
   };
 
   setInterval(setTime, 1000);
-
   
   return (
     <div className='clock-wrapper'>

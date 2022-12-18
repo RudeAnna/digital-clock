@@ -4,6 +4,6 @@ export type NumberProps = {
 }
 
 export enum COLOR {
-    GRAY = '#CFCFCF',
+    GRAY = '#303030',
     ACTIVE = '#1EC8FF'
 }
